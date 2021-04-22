@@ -7,10 +7,10 @@ import BaseSyncTarget from './BaseSyncTarget';
 import { FileApi } from './file-api';
 
 interface FileApiOptions {
-	path(): string;
-	username(): string;
-	password(): string;
-	directory(): string;
+    path(): string;
+    username(): string;
+    password(): string;
+    directory(): string;
 }
 
 export default class SyncTargetJoplinServer extends BaseSyncTarget {

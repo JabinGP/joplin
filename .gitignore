@@ -831,6 +831,9 @@ packages/lib/Logger.js.map
 packages/lib/PoorManIntervals.d.ts
 packages/lib/PoorManIntervals.js
 packages/lib/PoorManIntervals.js.map
+packages/lib/SyncTargetAliyunOSS.d.ts
+packages/lib/SyncTargetAliyunOSS.js
+packages/lib/SyncTargetAliyunOSS.js.map
 packages/lib/SyncTargetJoplinServer.d.ts
 packages/lib/SyncTargetJoplinServer.js
 packages/lib/SyncTargetJoplinServer.js.map
@@ -861,6 +864,9 @@ packages/lib/errorUtils.js.map
 packages/lib/eventManager.d.ts
 packages/lib/eventManager.js
 packages/lib/eventManager.js.map
+packages/lib/file-api-driver-aliyun-oss.d.ts
+packages/lib/file-api-driver-aliyun-oss.js
+packages/lib/file-api-driver-aliyun-oss.js.map
 packages/lib/file-api-driver-joplinServer.d.ts
 packages/lib/file-api-driver-joplinServer.js
 packages/lib/file-api-driver-joplinServer.js.map
