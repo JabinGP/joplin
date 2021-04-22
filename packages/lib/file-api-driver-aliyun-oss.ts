@@ -1,4 +1,5 @@
 import OSS = require('ali-oss');
+import { basicDelta } from './file-api';
 const shim = require('./shim').default;
 const { basename } = require('./path-utils');
 
@@ -19,11 +20,6 @@ export default class FileApiDriverAliyunOSS {
 
 	public constructor(api: OSS) {
 		this.api_ = api;
-	}
-
-	public async initialize(basePath: string) {
-		// Todo
-		return basePath;
 	}
 
 	public api() {
@@ -134,7 +130,7 @@ export default class FileApiDriverAliyunOSS {
 		}
 	}
 
-	public async list(path: string): Promise<Array<AliyunOSSObjectStat>> {
+	public async list(path: string): Promise<any> {
 		let prefixPath = this.makepath_(path);
 		if (prefixPath.length > 0 && prefixPath[prefixPath.length - 1] !== '/') {
 			prefixPath += '/';
@@ -159,11 +155,19 @@ export default class FileApiDriverAliyunOSS {
 			query.marker = listRes.nextMarker;
 		} while (query.marker);
 		console.log(output);
-		return output;
+		return {
+			items: output,
+			hasMore: false,
+		};
 	}
 
-	public async delta() {
+	public async delta(path: string, options: any) {
+		const getDirStats = async (path_: string) => {
+			const res = await this.list(path_);
+			return res.items;
+		};
 
+		return await basicDelta(path, getDirStats, options);
 	}
 
 
